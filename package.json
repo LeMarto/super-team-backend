@@ -1,0 +1,19 @@
+{
+  "name": "super-team-backend",
+  "version": "1.0.0",
+  "description": "Node Backend for superhero team app",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeMarto/super-team-backend.git"
+  },
+  "author": "Martin Ignacio Alonso",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/LeMarto/super-team-backend/issues"
+  },
+  "homepage": "https://github.com/LeMarto/super-team-backend#readme"
+}
