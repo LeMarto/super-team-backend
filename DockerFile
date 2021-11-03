@@ -1,0 +1,6 @@
+FROM node:10
+WORKDIR /super-team-backend/
+COPY . .
+RUN npm start
+EXPOSE 80
+CMD ["node", "src/index.js"]
