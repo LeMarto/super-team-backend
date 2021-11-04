@@ -8,17 +8,31 @@ function endpoint (req, res) {
     const config = {
         method: 'post',
         url: uri,
-        data: { 'email': '',  'password': ''},
+        data: { 'email': email,  'password': password},
         headers: {
             'Content-Type': 'application/json'
         }
     }
 
     axios(config)
-        .then((resp) => {
-            res.send({'token': resp.token});
+        .then((axios_response) => {
+            let token = axios_response.data.token;
+            res
+                .status(202)
+                .json({'token': token});
         })
-        .catch((error)=> { console.log(Error)});
+        .catch((axios_response) => {
+            if (axios_response.response.status == 401 ) {
+                res
+                    .status(401)
+                    .send();
+            }
+            else {
+                res
+                    .status(500)
+                    .send();
+            }
+        });
 }
 
 exports.endpoint = endpoint;

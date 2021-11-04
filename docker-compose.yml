@@ -1,0 +1,14 @@
+services:
+  node-backend:
+    image: "node:16"
+    user: "node"
+    ports:
+      - "3000:3000"
+    working_dir: /super-team-backend/
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - .:/super-team-backend/
+    expose:
+      - "3000"
+    command: "npm dev run"
