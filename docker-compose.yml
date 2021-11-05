@@ -1,5 +1,6 @@
 services:
-  node-backend:
+  backend:
+    container_name: node-backend
     image: "node:16"
     user: "node"
     ports:
@@ -8,7 +9,9 @@ services:
     environment:
       - NODE_ENV=production
     volumes:
-      - .:/super-team-backend/
+      - type: bind
+        source: .
+        target: /super-team-backend/
     expose:
       - "3000"
-    command: "npm dev run"
+    command: sh -c "npm run dev"
